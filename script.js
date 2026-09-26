@@ -55,11 +55,11 @@ function playGame() {
                 humanScore +=1;
                 console.log("Human wins.");
             }
-        else if (humanChoice == computerChoice) {
+    else if (humanChoice == computerChoice) {
             drawCount += 1;
             console.log("Draw.");
         }
-        else {
+    else {
             computerScore += 1;
             console.log("Computer wins.");
         }
