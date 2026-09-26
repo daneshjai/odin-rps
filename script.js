@@ -1,9 +1,4 @@
-console.log("Hello World");
-
-let humanScore = 0;
-let computerScore = 0;
-
-// function that randomly picks and assigns it to a Rock, Paper, or defaults to Scissors based on number threshold
+// function that randomly picks a number and based on number thresholds assigns it to a Rock, Paper, or Scissors
 function getComputerChoice() {
     const computer_choice = Math.random();
 
@@ -20,7 +15,7 @@ function getComputerChoice() {
 }
 
 // function that gets human input.
-// currently does not handle input validation
+// simple validation input by limiting input to number selection
 function getHumanChoice() {
     const message = "Enter a number. 1 = Rock, 2 = Paper, 3 = Scissors";
     let human_choice = parseInt(prompt(message, 1));
@@ -33,15 +28,76 @@ function getHumanChoice() {
         case 3:
             return "scissors";
         default:
-            console.log("Bad selection. You automatically lose.")
-            break;
+            console.log("Bad selection. Pick again")
+            return getHumanChoice();
 
     }
 }
 
-function playRound() {
+
+// function to initialize the game
+function playGame() {
+    //define score counters
+    let humanScore = 0;
+    let computerScore = 0;
+    let drawCount = 0;
+
+    // function with game logic
+    function playRound(humanChoice, computerChoice) {
+        console.log("Rock. Paper. Scissors. Shoot!");
+        console.log("Human picked", humanChoice);
+        console.log("Computer picked", computerChoice);
+
+    if (
+            (humanChoice == "rock" && computerChoice == "scissors") ||
+            (humanChoice == "paper" && computerChoice == "rock") ||
+            (humanChoice == "scissors" && computerChoice == "paper")) {
+                humanScore +=1;
+                console.log("Human wins.");
+            }
+        else if (humanChoice == computerChoice) {
+            drawCount += 1;
+            console.log("Draw.");
+        }
+        else {
+            computerScore += 1;
+            console.log("Computer wins.");
+        }
+   
+  
+    }
+    
+    // define loop variables
+    roundCounter = 1;
+    maxRound = 5;
+
+    while (roundCounter <= maxRound) {
+        // define round header
+        roundHeader = `******** ROUND ${roundCounter} ********`;
+        console.log(roundHeader)
+        
+        // get the choices
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        
+        // call the logic
+        playRound(humanSelection, computerSelection);
+        
+        // output the game stats
+        console.log("Human Wins:", humanScore, "Losses:", computerScore, "Draws:", drawCount);
+        console.log("Rounds remaining:", maxRound - roundCounter);
+        roundCounter += 1;
+
+        // define round footer
+        console.log("*".repeat(roundHeader.length));
+        console.log(" ");
+        
+    }
+    
 
 }
 
-console.log("Computer selects", getComputerChoice());
-console.log("Human selects", getHumanChoice());
+// game start
+playGame();
+
+
