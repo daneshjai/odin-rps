@@ -14,14 +14,15 @@ Better understanding of `cont` vs. `let` for variable declaration.
 
 ## Git
 
-Better understanding of `git add . | <file>`, `git status` and when to use `git reset soft HEAD~1` and `git restore --staged . | <file>` 
+Better understanding of `git add . | <file>`, `git status` and when to use `git reset soft HEAD~1` and `git restore --staged . | <file>` and how to exiting the `git log` by pressing `q`.
 
-`git reset soft HEAD~1` to undo the commit comment but keep the staged changes
-`git restore --staged . | <file>`  to undo the staged items or item but keep the changes
+`git reset soft HEAD~1` to undo the commit comment but keep the staged changes.
+
+`git restore --staged . | <file>`  to undo the staged items or item but keep the changes.
 
 More practice with the git workflow:
 
-Create repo manually on gitHub -> `git clone <repo_url.git>` -> Edit files -> `git add .` -> `git commit -m "<comments>"` -> `git push`
+Create repo manually on gitHub -> `git clone <repo_url.git>` -> Edit files -> `git add .` -> `git status` -> `git commit -m "<comments>"` -> `git push`
 
 ## HTML
 
