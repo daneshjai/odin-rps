@@ -30,6 +30,8 @@ More practice with the git workflow:
 
 Create repo manually on gitHub -> `git clone <repo_url.git>` -> Edit files -> `git add .` -> `git status` -> `git commit -m "<comments>"` -> `git push`
 
+Practice with creating branches and branch commands and workflow: 
+
 `git branch  <branch name> | git checkout -b <branch name>` to create a new branch
 
 `git checkout <branch name>` to switch between branches
